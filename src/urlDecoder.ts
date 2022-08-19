@@ -16,7 +16,7 @@ export const decodeUrl = (url: string): RepoInfo => {
 
 	const projectName = pathParts.pop().replace(/\.git$/, '')
 
-	const path = join(urlObj.host, ...pathParts)
+	const path = join(urlObj.hostname, ...pathParts)
 
 	return {
 		path,

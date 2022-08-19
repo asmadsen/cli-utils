@@ -13,5 +13,9 @@ describe('urlDecoder', () => {
 		const subProjectUrl = decodeUrl('https://gitlab.com/asmadsen/subproject/cli-utils.git')
 		expect(subProjectUrl).toHaveProperty('path', 'gitlab.com/asmadsen/subproject')
 		expect(subProjectUrl).toHaveProperty('projectName', 'cli-utils')
+
+		const subProjectUrl = decodeUrl('https://gitlab.com:2222/asmadsen/subproject/cli-utils.git')
+		expect(subProjectUrl).toHaveProperty('path', 'gitlab.com/asmadsen/subproject')
+		expect(subProjectUrl).toHaveProperty('projectName', 'cli-utils')
 	})
 })
